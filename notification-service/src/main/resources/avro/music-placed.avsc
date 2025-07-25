@@ -1,0 +1,9 @@
+{
+  "type": "record",
+  "name": "ArtistPlacedEvent",
+  "namespace": "com.code.notification_service.order",
+  "fields": [
+    { "name": "ArtistNumber", "type": "string" },
+    { "name": "email", "type": "string" }
+  ]
+}

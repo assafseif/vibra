@@ -1,0 +1,9 @@
+{
+  "type": "record",
+  "name": "ArtistPlacedEvent",
+  "namespace": "com.code.music_catalog_service.events",
+  "fields": [
+    { "name": "ArtistNumber", "type": "string" },
+    { "name": "email", "type": "string" }
+  ]
+}
