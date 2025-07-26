@@ -7,4 +7,9 @@ import lombok.Data;
 public class StoreSongDTO {
     @NotNull
     private String name;
+
+    private Long artist_id;
+
+    private Long album_id;
+
 }

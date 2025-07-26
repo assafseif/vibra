@@ -5,13 +5,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
+import com.code.common_vo.utils.ApiResponse;
 import com.code.music_catalog_service.artist.dto.requests.StoreArtistDTO;
 import com.code.music_catalog_service.artist.dto.requests.UpdateArtistDTO;
 import com.code.music_catalog_service.artist.entity.ArtistVO;
 import com.code.music_catalog_service.artist.mapper.ArtistMapper;
 import com.code.music_catalog_service.artist.repository.ArtistRepository;
 import com.code.music_catalog_service.events.ArtistPlacedEvent;
-import com.code.common_vo.utils.ApiResponse;
 
 
 @Service
@@ -34,10 +34,10 @@ public class ArtistServiceImpl implements ArtistService {
                 .build();
         ArtistVO savedArtist = artistRepository.save(newArtist);
 
-        ArtistPlacedEvent artistPlacedEvent = new ArtistPlacedEvent();
-        artistPlacedEvent.setArtistNumber("123");
-        artistPlacedEvent.setEmail("dirani@outlook.com");
-        kafkaTemplate.send("music-placed", artistPlacedEvent);
+        // ArtistPlacedEvent artistPlacedEvent = new ArtistPlacedEvent();
+        // artistPlacedEvent.setArtistNumber("123");
+        // artistPlacedEvent.setEmail("dirani@outlook.com");
+        // kafkaTemplate.send("music-placed", artistPlacedEvent);
 
         return new ApiResponse(true, "Artist saved successfully", savedArtist);
     }
